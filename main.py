@@ -92,6 +92,12 @@ class Farm:
         self.West_East_Wind = weathercsv['West_East_Wind'].to_numpy()
         self.South_North_Wind = weathercsv['South_North_Wind'].to_numpy()
 
+    def load_weather_csv_2(self, weather_csv_dir):
+        weathercsv = pd.read_csv(weather_csv_dir)
+        self.Temperature = weathercsv['2t'].to_numpy()
+        self.West_East_Wind = weathercsv['10u'].to_numpy()
+        self.South_North_Wind = weathercsv['10v'].to_numpy()
+
 
 class Sun:
     def __init__(self, farm, data):
